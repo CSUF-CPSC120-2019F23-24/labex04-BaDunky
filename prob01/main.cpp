@@ -16,7 +16,7 @@ int main()
   // TODO#2: add one to the character to see what gets printed out
 
   char my_char2 = 'C';
-  my_char2 = static_cast<short>('C') + 1;
+  my_char2 = static_cast<short>(my_char2) + 1;
   std::cout << "Char1: " << my_char2 << std::endl;
 
   std::cout << std::endl; // blank line to separate output from the different exercises
@@ -26,7 +26,7 @@ int main()
   // longer alphabetic
 
   char my_char3 = 'z';
-  my_char3 = static_cast<short>('z') + 1; // The next ASCII symbol after 'z'(122) is '{'(123)
+  my_char3 = static_cast<short>(my_char3) + 1; // The next ASCII symbol after 'z'(122) is '{'(123)
   std::cout << "Char2: " << my_char3 << std::endl;
 
   std::cout << std::endl; // blank line to separate output from the different exercises
