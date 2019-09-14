@@ -8,7 +8,7 @@ int main()
   // then print both the char and the short
 
   char my_char1 = 'J';
-  short my_short1 = ;
+  short my_short1 = static_cast<short>(my_char1);
   std::cout << "The ASCII value for " << my_char1 << " is " << my_short1 << std::endl;
 
   std::cout << std::endl; // blank line to separate output from the different exercises
@@ -16,7 +16,7 @@ int main()
   // TODO#2: add one to the character to see what gets printed out
 
   char my_char2 = 'C';
-  my_char2 = ;
+  my_char2 = static_cast<short>('C') + 1;
   std::cout << "Char1: " << my_char2 << std::endl;
 
   std::cout << std::endl; // blank line to separate output from the different exercises
@@ -26,7 +26,7 @@ int main()
   // longer alphabetic
 
   char my_char3 = 'z';
-  my_char3 = ;
+  my_char3 = static_cast<short>('z') + 1; // The next ASCII symbol after 'z'(122) is '{'(123)
   std::cout << "Char2: " << my_char3 << std::endl;
 
   std::cout << std::endl; // blank line to separate output from the different exercises
@@ -42,15 +42,15 @@ int main()
 
   std::cout << "Short (" << sizeof(my_short2) << " bytes): "
     << std::dec << my_short2 << std::hex << " (0x" << my_short2 << ')';
-  my_short2 = ;
-  std::cout << ", after adding 1: " << std::dec << my_short2
-    << std::hex << " (0x" << my_short2 << ")\n";
+  my_short2 = my_short2 + 1;
+  std::cout << ", after adding 1: " << std::dec << my_short2  // The value rolls back to a negative
+    << std::hex << " (0x" << my_short2 << ")\n";              // as it reached the maximum value
 
   std::cout << "Int (" << sizeof(my_short2) << " bytes): "
     << std::dec << my_int2 << std::hex << " (0x" << my_int2 << ')';
-  my_int2 = ;
-  std::cout << ", after adding 1: " << std::dec << my_int2
-    << std::hex << " (0x" << my_int2 << ")\n";
+  my_int2 = my_int2 + 1;
+  std::cout << ", after adding 1: " << std::dec << my_int2  // The maximum value of an integer is
+    << std::hex << " (0x" << my_int2 << ")\n";              // 2,147,483,647
 
   std::cout << std::endl; // blank line to separate output from the different exercises
 
@@ -63,13 +63,13 @@ int main()
 
   std::cout << "Unsigned short (" << sizeof(my_short3) << " bytes): "
     << std::dec << my_short3 << std::hex << " (0x" << my_short3 << ')';
-  my_short3 = ;
-  std::cout << ", after adding 1: " << std::dec << my_short3
-    << std::hex << " (0x" << my_short3 << ")\n";
+  my_short3 = my_short3 + 1;
+  std::cout << ", after adding 1: " << std::dec << my_short3  // Unsigned short does not become negative and instead 0
+    << std::hex << " (0x" << my_short3 << ")\n";              // but does double the maximum positive value
 
   std::cout << "Same value as int (" << sizeof(my_int3) << " bytes): "
     << std::dec << my_int3 << std::hex << " (0x" << my_int3 << ')';
-  my_int3 = ;
+  my_int3 = my_int3 + 1;
   std::cout << ", after adding 1: " << std::dec << my_int3
     << std::hex << " (0x" << my_int3 << ")\n";
 
